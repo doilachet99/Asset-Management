@@ -1,0 +1,79 @@
+﻿@model IEnumerable<WebApplication1.Models.Devices>
+@{
+    ViewBag.title = "V2";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+    ViewBag.active = 1;
+}
+
+<div>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1 class="m-0">Quản lý Thiết Bị</h1>
+                    </div><!-- /.col -->
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="~/Home/Index">Home</a></li>
+                            <li class="breadcrumb-item active">Quản lý Thiết Bị</li>
+                        </ol>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content-header -->
+        <!-- Main content -->
+        <section class="content">
+            <div class="form-group1">
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <input type="text" id="email" name="email" placeholder="Enter your email">
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <input type="text" id="email" name="email" placeholder="Enter your email">
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <input type="text" id="email" name="email" placeholder="Enter your email">
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <input type="text" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <!-- Gridview -->
+            <div class="row">
+                <div class="col">
+                    <!-- Bạn có thể thay đổi class col-* để tạo kích thước phù hợp -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Decription</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Dữ liệu được load từ backend và điền vào đây -->
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Description</td>
+                                </tr>
+                            }
+
+                            <!-- Thêm các dòng dữ liệu khác tương tự nếu cần -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="float-sm-right mb-3">
+                <button type="submit">Submit</button>
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+</div>
